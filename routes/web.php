@@ -23,3 +23,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::get('/servers',[\App\Http\Controllers\ServerController::class, 'showservers'])->name('showservers');
+Route::delete('/deleteserver/{id}', [\App\Http\Controllers\ServerController::class, 'deleteServer'])->name('deleteserver');
+
