@@ -27,7 +27,7 @@
                             </div>
                         </div>
                         <div class="category__from__controls text-align__center">
-                            <input type="submit" value="Zapisz">
+                            <input type="submit" value="Zapisz1">
                         </div>
                     </form>
                 </div>
