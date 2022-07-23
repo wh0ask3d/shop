@@ -28,6 +28,21 @@ class ServerController extends Controller
          ]);
         return redirect()->route('');
     }
+    public function editServer(Server $server)
+    {
+        return view('editserver', ['server' => $server]);
+    }
+    public function editServerUpdate(Server $server, Request $request)
+    {
+        $server->update([
+           'name' => $request->name,
+           'ip' => $request->ip,
+           'port' => $request->port,
+           'rconport' => $request->rconport,
+        ]);
+        return redirect()->route('servers');
+    }
+
     public function deleteServer($id)
     {
         $server = Server::find($id);
