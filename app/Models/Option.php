@@ -5,9 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Server extends Model
+class Option extends Model
 {
-    use HasFactory;
-
-    protected $fillable = ['name','ip','port','rconport'];
+    protected $fillable = [
+        'email',
+        'email-text',
+    ];
 }

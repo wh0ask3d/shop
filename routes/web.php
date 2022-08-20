@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\ServerController;
+use App\Http\Controllers\OptionsController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,19 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/kontakt', [App\Http\Controllers\HomeController::class, 'index'])->name('contact');
 
+Route::get('/options',[OptionsController::class, 'showOptions'])->name('showOptions');
 
-Route::get('/servers',[\App\Http\Controllers\ServerController::class, 'showServers'])->name('showservers');
-Route::delete('/deleteserver/{id}', [\App\Http\Controllers\ServerController::class, 'deleteServer'])->name('deleteserver');
-Route::get('/addserver',  [ServerController::class, 'addServer'])->name('addserver');
-Route::post('/updateserver', [ServerController::class, 'updateServer'])->name('updateserver');
-Route::get('/editserver/{server}', [ServerController::class, 'editServer'])->name('editserver');
-Route::put('/editserverupdate/{server}', [ServerController::class, 'editServerUpdate'])->name('editupdateserver');
 
